@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import Payments from "./Payments";
 
 export class Header extends Component {
   renderContent = () => {
@@ -14,17 +15,20 @@ export class Header extends Component {
           </li>
         );
       default:
-        return (
-          <li>
+        return [
+          <li key="0">
+            <Payments />
+          </li>,
+          <li key="1">
             <a href="/api/logout">Logout</a>
           </li>
-        );
+        ];
     }
   };
 
   render() {
     return (
-      <nav className="teal lighten-2">
+      <nav className="light-blue darken-3">
         <div className="nav-wrapper">
           <Link
             to={this.props.auth ? "/dashboard" : "/"}
