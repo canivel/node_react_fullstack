@@ -7,6 +7,7 @@ import Header from "./Header";
 import Landing from "./Landing";
 import history from "../history";
 import Dashboard from "./Dashboard";
+import SurveyNew from "./surveys/SurveyNew";
 
 export class App extends Component {
   componentDidMount() {
@@ -22,6 +23,7 @@ export class App extends Component {
             <Switch>
               <Route path="/" exact component={Landing} />
               <Route path="/dashboard" exact component={Dashboard} />
+              <Route path="/surveys/new" exact component={SurveyNew} />
             </Switch>
           </div>
         </Router>
